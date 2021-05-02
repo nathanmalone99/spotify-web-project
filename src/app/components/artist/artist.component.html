@@ -1,0 +1,43 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div *ngIf="artist">
+
+    <div class="card mb-3 w-100 shadow p-3 bg-body rounded">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="{{artist.images[2]?.url}}" alt="{{artist.name}} image not found!" class="h-100">
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">{{artist.name}}</h5>
+                    <div>
+                        <strong>Genres: </strong>
+                        <span *ngFor="let genre of artist.genres"><span
+                                class="badge bg-primary mr-1">{{genre}}</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="albums">
+    <div class="row row-cols-1 row-cols-md-5">
+        <ng-container *ngFor="let album of albums.items;  let i=index">
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img alt="Product Image" class="card-img-top" src="{{album.images[2].url}}" height="150">
+                    <div class="card-body">
+                        <h5 class="card-title">{{album.name}}</h5>
+                        <a class="btn btn-outline-primary d-flex justify-content-center"
+                            routerLink="/album/{{album.id}}">View Album</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

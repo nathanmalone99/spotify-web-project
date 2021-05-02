@@ -1,0 +1,44 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+
+<div *ngIf="album">
+
+    <div class="card mb-3 w-100 shadow p-3 bg-body rounded">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="{{album.images[2]?.url}}" class="w-100" alt="{{album.name}} image not found!">
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">{{album.name}}</h5>
+                    <p class="card-text"><strong>Release Date: </strong><span class="text-muted">{{album.release_date |
+                            date }}</span></p>
+                    <a class="btn btn-outline-primary" target="_blank" href="{{album.external_urls.spotify}}">View in
+                        Spotify</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="album">
+        <div class="row row-cols-1 row-cols-md-3">
+            <ng-container *ngFor="let track of album.tracks.items;  let i=index">
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{track.track_number}} - {{track.name}}</h5>
+                            <div class="d-flex align-items-end align-self-end">
+                                <audio controls src="{{track.preview_url}}"></audio>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
