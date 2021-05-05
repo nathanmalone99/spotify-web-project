@@ -1,3 +1,3 @@
 export class Config {
-    public static AUTH_TOKEN = 'BQAvknNYbghfSmq2qP1NH6aFoCmdXNOYAPwwqIYoV8qE8XjjdfPgR9C6AFDmxpaT0j-nWlp3KUV4IVDaKGbVXlw8cN1bOhKBWdkv9Qh5F3nOWs8HUtZvi--3-SWGDkYosHiM7J2OACx86CnaSyK9';
+    public static AUTH_TOKEN = 'BQBSL9Zs2TRj4CUqsv8bjrKnyaqYxSkxMb433ZlHW4PXfL4gsFr3nsWRL_MWG2uE_tLnQxhAy_XJIvkYDqwLkuI96gTtwObARuZHg3FvOw1sr5CDX8_z1zDrNxUt2t9cdpQFHCHkZz9dbVMb0sUx';
 }
